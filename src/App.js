@@ -7,10 +7,12 @@ export default class  App extends React.Component {
     name: 'Goku',
     age: 15
   };
-  eventHandler(e){
-    console.log(e.target);
+  eventHandler = (e) =>{
+    this.setState({
+      name: 'Vegita'
+    });
   }
-  handleMouseOver(e){
+  handleMouseOver = (e) =>{
     console.log(e.target,  e.pageX);
   }
   handleCopy(e){
