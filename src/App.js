@@ -12,20 +12,26 @@ export default class  App extends React.Component {
       name: 'Vegita'
     });
   }
-  handleMouseOver = (e) =>{
-    console.log(e.target,  e.pageX);
+  handleChange = (e) =>{
+    this.setState({
+      name: e.target.value
+    });
   }
-  handleCopy(e){
-    console.log("original", e);
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('form submited',this.state.name);
+    
   }
   render(){
     return(
       <div className="App">
         <h1>Hello bisha!</h1>
-        <p>My name is {this.state.name} and I am {this.state.age} old</p>   
-        <button onClick={this.eventHandler}> Click me!</button>
-        <button onMouseOver={this.handleMouseOver}> Hover me!</button>
-        <p onCopy={this.handleCopy}>What we think, we do!</p>
+        <p>My name is {this.state.name}</p>   
+        <form onSubmit={this.handleFormSubmit}> 
+          <input type="text" onChange={this.handleChange}/>
+          <button>Submit</button>
+        </form>
+       
       </div>
     )
   } 
