@@ -2,39 +2,26 @@ import React from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
 import Content from './content';
-export default class  App extends React.Component {
+export default class App extends React.Component {
   state = {
-    name: 'Goku',
-    age: 15
+    people : [
+      { name: 'Goku', age: 10, belt: 'black', id: 1 },
+      { name: 'Vegita', age: 20, belt: 'red', id: 2 },
+      { name: 'Gorian', age: 24, belt: 'blue', id: 3 },
+    ]
   };
-  eventHandler = (e) =>{
-    this.setState({
-      name: 'Vegita'
-    });
-  }
-  handleChange = (e) =>{
-    this.setState({
-      name: e.target.value
-    });
-  }
-  handleFormSubmit = (e) => {
-    e.preventDefault();
-    console.log('form submited',this.state.name);
-    
-  }
-  render(){
-    return(
+
+  render() {
+    return (
       <div className="App">
         <h1>Hello bisha!</h1>
-        <Content name="Goku" age="21212" belt="black"/>       
-        <Content name="Gorian" age="100" belt="white"/>       
+        <Content people = {this.state.people} />
       </div>
     )
-  } 
+  }
 }
- 
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
 
-  
