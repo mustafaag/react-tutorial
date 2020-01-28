@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
-
+import Content from './content';
 export default class  App extends React.Component {
   state = {
     name: 'Goku',
@@ -26,12 +26,7 @@ export default class  App extends React.Component {
     return(
       <div className="App">
         <h1>Hello bisha!</h1>
-        <p>My name is {this.state.name}</p>   
-        <form onSubmit={this.handleFormSubmit}> 
-          <input type="text" onChange={this.handleChange}/>
-          <button>Submit</button>
-        </form>
-       
+        <Content />       
       </div>
     )
   } 
