@@ -26,7 +26,8 @@ export default class  App extends React.Component {
     return(
       <div className="App">
         <h1>Hello bisha!</h1>
-        <Content />       
+        <Content name="Goku" age="21212" belt="black"/>       
+        <Content name="Gorian" age="100" belt="white"/>       
       </div>
     )
   } 
