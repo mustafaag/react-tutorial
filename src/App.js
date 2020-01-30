@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
 import Content from './content';
+import AddPerson from './AddPerson';
+
 export default class App extends React.Component {
   state = {
     people : [
@@ -16,6 +18,7 @@ export default class App extends React.Component {
       <div className="App">
         <h1>Hello bisha!</h1>
         <Content people = {this.state.people} />
+        <AddPerson />
       </div>
     )
   }
