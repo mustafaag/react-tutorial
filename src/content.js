@@ -27,12 +27,12 @@ const Content = ({ people }) => {
   return (
     <div className='person-list'>
       { people.map(person => {
-        return person.age >= 18 ? (
+        return (
           <div key={person.id}>
             <div> Name: {person.name}</div>
             <div> Age: {person.age}</div>
             <div> Belt {person.belt} </div>
-          </div>) : null
+          </div>)
       })
       }
     </div>

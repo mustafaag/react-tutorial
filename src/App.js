@@ -13,12 +13,21 @@ export default class App extends React.Component {
     ]
   };
 
+  addPerson = (person) => {
+    person.id = Math.random();
+    let pep = [...this.state.people, person];
+    console.log(pep);
+    this.setState({
+      people: pep
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hello bisha!</h1>
         <Content people = {this.state.people} />
-        <AddPerson />
+        <AddPerson addPerson = {this.addPerson} />
       </div>
     )
   }

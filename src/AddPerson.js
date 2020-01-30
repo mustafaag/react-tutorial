@@ -14,7 +14,7 @@ class AddPerson extends Component {
 
     handleSumbit = (e) =>{
         e.preventDefault();
-        console.log(this.state);
+        this.props.addPerson(this.state)
     }
     render () {
         return (
