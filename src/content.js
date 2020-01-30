@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Content = ({ people }) => {
+const Content = ({ people, deletePerson }) => {
   const peopleList = people.map(person => {
     // Conditial output IF
     if (person.age >= 18) {
@@ -9,32 +9,17 @@ const Content = ({ people }) => {
           <div> Name: {person.name}</div>
           <div> Age: {person.age}</div>
           <div> Belt {person.belt} </div>
+          <button onClick={() => { deletePerson(person.id) } }>Delete Person</button>
         </div>
       )
     } else {
       return null;
     }
   });
-    // Ternary operation 
-  const peopleList2 = people.map(person => {
-    return person.age >= 18 ? (
-      <div key={person.id}>
-        <div> Name: {person.name}</div>
-        <div> Age: {person.age}</div>
-        <div> Belt {person.belt} </div>
-      </div>) : null
-  });
+ 
   return (
     <div className='person-list'>
-      { people.map(person => {
-        return (
-          <div key={person.id}>
-            <div> Name: {person.name}</div>
-            <div> Age: {person.age}</div>
-            <div> Belt {person.belt} </div>
-          </div>)
-      })
-      }
+      {peopleList}
     </div>
   )
 }

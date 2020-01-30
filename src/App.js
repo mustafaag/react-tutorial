@@ -22,11 +22,20 @@ export default class App extends React.Component {
     });
   }
 
+  deletePerson = (id) =>{
+    let pep = this.state.people.filter(person =>{
+      return person.id !== id;
+    });
+    this.setState({
+      people: pep
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Hello bisha!</h1>
-        <Content people = {this.state.people} />
+        <Content people = {this.state.people} deletePerson={this.deletePerson} />
         <AddPerson addPerson = {this.addPerson} />
       </div>
     )
