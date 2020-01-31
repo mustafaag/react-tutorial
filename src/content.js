@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './content.css'
 const Content = ({ people, deletePerson }) => {
   const peopleList = people.map(person => {
     // Conditial output IF
