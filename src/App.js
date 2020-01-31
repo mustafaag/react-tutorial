@@ -30,7 +30,15 @@ export default class App extends React.Component {
       people: pep
     });
   }
+   
+  componentDidMount(){
+    console.log('Component mouned');
+  }
 
+  componentDidUpdate(prevProps, prevState){
+    console.log('Component update');
+    console.log(prevProps,prevState);
+  }
   render() {
     return (
       <div className="App">
